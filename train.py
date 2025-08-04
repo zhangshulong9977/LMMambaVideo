@@ -74,7 +74,7 @@ def train(device, net, train_loader, val_loader, loss_fn, optimizer, epochs, pat
         print("train_acc:", avg_train_acc)
 
         val_loss, val_acc = 0, 0
-        model.eval()
+        net.eval()
         with torch.no_grad():
             for i, (x, y) in enumerate(val_loader):
                 x, y = x.to(device), y.to(device)
