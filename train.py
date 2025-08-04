@@ -100,7 +100,7 @@ def train(device, net, train_loader, val_loader, loss_fn, optimizer, epochs, pat
                 for group in optimizer.param_groups:
                     group['lr'] = optimizer.param_groups[0]['lr'] * 0.5
                 current_patience = 0
-        torch.save(net.state_dict(), path_save_model)
+    torch.save(net.state_dict(), path_save_model)
 
 def set_seed(seed):
     random.seed(seed)                       
